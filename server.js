@@ -11,7 +11,11 @@ const app = express()
 const PORT = process.env.PORT || 4000
 
 // Middlewaress
-app.use(cors())
+app.use(cors({
+  origin: "https://genimage-project.vercel.app",
+  credentials: true
+}));
+
 app.use(express.json())
 app.use('/user/api',route);
 
